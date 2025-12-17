@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tik Tak Top Course - Solusi Belajar Digital</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="logo-tiktaktop.png" alt="Logo Tik Tak Top" height="45" class="d-inline-block align-text-center me-2 rounded-circle bg-white p-1">
+                Tik Tak Top
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Layanan
+                        </a>
+                        <ul class="dropdown-menu border-0 shadow">
+                            <li><a class="dropdown-item" href="#pendaftaran">Pendaftaran Anggota</a></li>
+                            <li><a class="dropdown-item" href="#kelas">Informasi Layanan</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#koleksi">Koleksi</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" id="home">
+        <div class="hero-section text-center p-5">
+            <h1 class="display-4 fw-bold mb-3">Selamat Datang di Tik Tak Top Course</h1>
+            <p class="lead mb-4 mx-auto col-lg-8">Bergabunglah dengan ribuan siswa lainnya di Tik Tak Top Course. Belajar skill praktis dari mentor ahli industri.</p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <a href="#pendaftaran" class="btn btn-primary btn-lg px-4 gap-3"><i class="bi bi-pencil-square me-2"></i>Daftar Sekarang</a>
+                <a href="#kelas" class="btn btn-outline-light btn-lg px-4">Lihat Kelas</a>
+            </div>
+        </div>
+    </div>
+
+    <section id="pendaftaran" class="container mt-5 pt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="text-center mb-5">
+                    <span class="badge bg-primary bg-opacity-10 text-primary mb-2 px-3 py-2 rounded-pill">Formulir Baru</span>
+                    <h2 class="fw-bold">Pendaftaran Anggota</h2>
+                    <p class="text-muted">Isi data diri Anda dengan lengkap untuk memulai akses belajar.</p>
+                </div>
+                
+                <div class="card card-kelas p-4">
+                    <form name="tiktaktop-form">
+    <div class="row g-3">
+        <div class="col-12">
+            <label class="form-label fw-bold small text-uppercase">Nama Lengkap</label>
+            <div class="input-group">
+                <span class="input-group-text bg-light"><i class="bi bi-person"></i></span>
+                <input type="text" class="form-control" name="nama" placeholder="Nama sesuai KTP" required>
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <label class="form-label fw-bold small text-uppercase">Program Kursus</label>
+            <select class="form-select" name="program" required>
+                <option value="" selected>Pilih Program...</option>
+                <option value="Desain Grafis">Desain Grafis</option>
+                <option value="Web Programming">Web Programming</option>
+                <option value="Data Analysis">Data Analysis</option>
+            </select>
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label fw-bold small text-uppercase">NIK / NIS</label>
+            <input type="number" class="form-control" name="nik" placeholder="Nomor Induk" required>
+        </div>
+
+        <div class="col-12">
+            <label class="form-label fw-bold small text-uppercase">Alamat Lengkap</label>
+            <textarea class="form-control" name="alamat" rows="3" placeholder="Alamat Lengkap..." required></textarea>
+        </div>
+
+        <div class="col-12">
+            <label class="form-label fw-bold small text-uppercase">Nomor WhatsApp</label>
+            <div class="input-group">
+                <span class="input-group-text bg-light"><i class="bi bi-whatsapp text-success"></i></span>
+                <input type="text" class="form-control" name="whatsapp" placeholder="Contoh: 0812..." required>
+            </div>
+        </div>
+
+        <div class="col-12 mt-4">
+            <button type="submit" class="btn btn-primary w-100 py-3 btn-kirim">
+                <i class="bi bi-send-fill me-2"></i> Kirim Pendaftaran
+            </button>
+            <button class="btn btn-primary w-100 py-3 btn-loading d-none" type="button" disabled>
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                Loading...
+            </button>
+        </div>
+    </div>
+</form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kelas" class="container mt-5 pt-5 mb-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Informasi Layanan</h2>
+            <p class="text-muted">Pilih jalur belajar yang sesuai dengan minat dan tujuan karirmu.</p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card card-kelas h-100 text-center p-4">
+                    <div class="card-body">
+                        <div class="card-icon text-primary"><i class="bi bi-code-slash"></i></div>
+                        <h4 class="card-title fw-bold">Web Programming</h4>
+                        <p class="card-text text-muted">Kuasai HTML, CSS, JS, hingga Database untuk membangun website modern.</p>
+                        <a href="#" class="btn btn-outline-primary btn-sm px-4">Detail Kelas</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card card-kelas h-100 text-center p-4">
+                    <div class="card-body">
+                        <div class="card-icon text-success"><i class="bi bi-bar-chart-line"></i></div>
+                        <h4 class="card-title fw-bold">Data Analysis</h4>
+                        <p class="card-text text-muted">Analisis data menggunakan Python dan buat visualisasi untuk keputusan bisnis.</p>
+                        <a href="#" class="btn btn-outline-primary btn-sm px-4">Detail Kelas</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card card-kelas h-100 text-center p-4">
+                    <div class="card-body">
+                        <div class="card-icon text-warning"><i class="bi bi-megaphone"></i></div>
+                        <h4 class="card-title fw-bold">Digital Marketing</h4>
+                        <p class="card-text text-muted">Strategi SEO, Google Ads, dan Social Media Marketing untuk bisnis.</p>
+                        <a href="#" class="btn btn-outline-primary btn-sm px-4">Detail Kelas</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card card-kelas h-100 text-center p-4">
+                    <div class="card-body">
+                        <div class="card-icon text-danger"><i class="bi bi-shield-lock"></i></div>
+                        <h4 class="card-title fw-bold">Cyber Security</h4>
+                        <p class="card-text text-muted">Pelajari cara mengamankan sistem dan jaringan dari serangan peretas.</p>
+                        <a href="#" class="btn btn-outline-primary btn-sm px-4">Detail Kelas</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card card-kelas h-100 text-center p-4">
+                    <div class="card-body">
+                        <div class="card-icon text-info"><i class="bi bi-palette"></i></div>
+                        <h4 class="card-title fw-bold">Desain Grafis</h4>
+                        <p class="card-text text-muted">Merancang desain aplikasi yang cantik dan nyaman digunakan pengguna.</p>
+                        <a href="#" class="btn btn-outline-primary btn-sm px-4">Detail Kelas</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+   <footer>
+        <div class="container">
+            <div class="row text-center text-md-start">
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold text-white mb-3">Alamat</h5>
+                    <p class="text-white-50">
+                        <i class="bi bi-geo-alt-fill me-2"></i>
+                        Gedung Tik Tak Top Lt. 1<br>
+                        Jl. Kaliurang KM 14.5<br>
+                        Sleman, Yogyakarta
+                    </p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold text-white mb-3">Contact</h5>
+                    <ul class="list-unstyled text-white-50">
+                        <li class="mb-2">
+                            <i class="bi bi-envelope me-2"></i> admin@tiktaktop.com
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-telephone me-2"></i> (021) 7788-9900
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-whatsapp me-2"></i> 0812-3456-7890
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold text-white mb-3">Sosial Media</h5>
+                    <p class="text-white-50 small">Ikuti kegiatan kami di:</p>
+                    <div class="d-flex gap-3 justify-content-center justify-content-md-start">
+                        <a href="#" class="text-white fs-4"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white fs-4"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white fs-4"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="text-white fs-4"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-secondary mt-3">
+            
+            <div class="text-center text-white-50 small">
+                <p class="mb-0">&copy; 2025 Tik Tak Top Course. Designed by Sayyidatul Bilqis.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
