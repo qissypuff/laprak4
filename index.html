@@ -228,9 +228,9 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxkOjd5hoDPlQsyHG_TV8E1LzC-HnbbZouo0-7geXhGTHyEFXzOhFutlkb3Fe48HY1s/exec';
+<script>
+        // PASTIKAN LINK INI SUDAH BENAR
+        const scriptURL = 'PASTE_LINK_APPS_SCRIPT_KAMU_DISINI';
         
         const form = document.forms['tiktaktop-form'];
         const btnKirim = document.querySelector('.btn-kirim');
@@ -239,32 +239,51 @@
         if (form) {
             form.addEventListener('submit', e => {
                 e.preventDefault();
-                // Tampilkan loading, sembunyikan tombol kirim
+                
+                // 1. Ambil data formulir
+                const data = new FormData(form);
+                
+                // 2. LOGIKA UBAH NOMOR WA
+                let nomorWA = data.get('whatsapp'); // Ambil nomor yg diketik user
+                
+                // Hapus spasi atau tanda strip (-) kalau user iseng ngetik gitu
+                nomorWA = nomorWA.replace(/\D/g, ''); 
+
+                // Kalau user ngetik depannya 0 (contoh: 0812...), ubah jadi 62812...
+                if (nomorWA.startsWith('0')) {
+                    nomorWA = '62' + nomorWA.substring(1);
+                } 
+                // Kalau user lupa ngetik kode negara (contoh: 812...), tambahin 62
+                else if (!nomorWA.startsWith('62')) {
+                    nomorWA = '62' + nomorWA;
+                }
+
+                // Update data yang mau dikirim dengan nomor baru
+                data.set('whatsapp', nomorWA);
+
+                // Tampilkan loading
                 if(btnLoading) btnLoading.classList.remove('d-none');
                 if(btnKirim) btnKirim.classList.add('d-none');
 
-                fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                // 3. Kirim data yang sudah dimodifikasi
+                fetch(scriptURL, { method: 'POST', body: data})
                     .then(response => {
-                        // Kembalikan tombol kirim
                         if(btnLoading) btnLoading.classList.add('d-none');
                         if(btnKirim) btnKirim.classList.remove('d-none');
                         
-                        // Tampilkan pesan sukses
-                        alert('Terima Kasih! Data pendaftaran berhasil dikirim.');
-                        
-                        // Bersihkan formulir
+                        alert('Terima Kasih! Data berhasil dikirim.');
                         form.reset();
                     })
                     .catch(error => {
                         console.error('Error!', error.message);
-                        alert('Gagal mengirim data. Coba cek koneksi internet.');
+                        alert('Gagal mengirim data. Cek koneksi internet.');
                         if(btnLoading) btnLoading.classList.add('d-none');
                         if(btnKirim) btnKirim.classList.remove('d-none');
                     });
             });
         }
     </script>
-
+ 
 </body>
 </html>
 </body>
